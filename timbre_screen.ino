@@ -225,27 +225,13 @@ void printTime(){
 
 
 void waitMinute() {
-   DateTime now = rtc.now();
-
-
-  int minuteWait = now.minute();
-  
-  while(minuteWait == now.minute()){
-    delay(1000);
-  }
-   
+   delay(60000);
    
 }
 
 
 void waitRing() {
     
-  DateTime now = rtc.now();
-  
-  int waitSeconds = now.second();
-
-  while((now.second() - waitSeconds)  < 6){
-    delay(1000);
-  }
+  delay(6000);
   
 }
