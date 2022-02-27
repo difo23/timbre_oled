@@ -117,7 +117,7 @@ void loop() {
   Serial.println(caseSwitch);
   text(""+ String(hourDay) +" "+ String(minuteDay)+" " +String(secondDay));
   
-  if( ( weekDay > 0 && weekDay < 7) && (hourDay > 6 && hourDay < 15 )) {
+  if( ( weekDay > 0 && weekDay < 6) && (hourDay > 6 && hourDay < 15 )) {
       
     switch (caseSwitch) {
         case 72:
