@@ -35,7 +35,7 @@ void setup()
 void loop()
 {
       DateTime now = rtc.now();
-      int weekDay = now.day();
+      int weekDay = now.dayOfTheWeek();
       int hourDay = now.hour();
       int minuteDay = now.minute();
       int secondDay = now.second();
@@ -103,7 +103,7 @@ void loop()
       }
       else
       {
-            Serial.println("In weekend or not working hours and doorbell off");
+            Serial.println("In weekend and doorbell off");
             digitalWrite(rele, HIGH);
             printTime();
       }
@@ -161,6 +161,7 @@ void waitRing()
 {
       DateTime currentTime = rtc.now();
       long startSeconds = currentTime.secondstime();
+
       while (true)
       {
             currentTime = rtc.now();
