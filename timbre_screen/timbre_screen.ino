@@ -143,26 +143,30 @@ void printTime()
       delay(1000);
 }
 
-void wait(long interval)
+void waitMinute()
 {
-      unsigned long previousTime = rtc.now().unixtime();
+      DateTime currentTime = rtc.now();
+      int startMinute = currentTime.minute();
       while (true)
       {
-            unsigned long currentTime = rtc.now().unixtime();
-            if (currentTime - previousTime >= interval)
+            currentTime = rtc.now();
+            if ((currentTime.minute() - startMinute) >= 1)
             {
                   break;
             }
-            delay(100);
       }
-}
-
-void waitMinute()
-{
-      wait(60000);
 }
 
 void waitRing()
 {
-      wait(6000);
+      DateTime currentTime = rtc.now();
+      long startSeconds = currentTime.secondstime();
+      while (true)
+      {
+            currentTime = rtc.now();
+            if ((currentTime.secondstime() - startSeconds) >= 6)
+            {
+                  break;
+            }
+      }
 }
